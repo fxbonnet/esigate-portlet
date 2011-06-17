@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<project name="portlet" basedir="." default="deploy">
+	<import file="../build-common-portlet.xml" />
+
+	<target name="compile">
+		<mkdir dir="docroot/WEB-INF/classes" />
+
+		<path id="plugin-lib.classpath">
+			<pathelement location="docroot/WEB-INF/classes" />
+			<pathelement location="${app.server.classes.portal.dir}" />
+			<fileset dir="${app.server.lib.portal.dir}" includes="*.jar" />
+			<fileset dir="docroot/WEB-INF/lib" includes="*.jar" />
+		</path>
+
+		<javac
+			classpathref="plugin.classpath"
+			compiler="${javac.compiler}"
+			debug="${javac.debug}"
+			deprecation="${javac.deprecation}"
+			destdir="docroot/WEB-INF/classes"
+			nowarn="${javac.nowarn}"
+			srcdir="docroot/WEB-INF/src"
+		/>
+
+		<antcall target="build-common-plugin.compile" />
+	</target>
+</project>

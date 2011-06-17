@@ -1,0 +1,10 @@
+<liferay-ui:message key="remote_url" />
+<input type="text" name="remoteURL" value="${remoteURL}" size="50"/><br><br>
+<liferay-ui:message key="enable_url_rewriting" />
+<input type="checkbox" name="rewritingURL" value="true" 
+	<% 
+		String rewritingURL = (String)request.getAttribute("rewritingURL");
+		if(rewritingURL != null) out.print("checked"); 
+	%>
+/>
+

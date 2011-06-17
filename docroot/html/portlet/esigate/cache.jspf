@@ -1,0 +1,11 @@
+<liferay-ui:message key="enable_cache" /> 
+<input type="checkbox" name="useCache" value="true" 
+	<% 
+		String useCache = (String)request.getAttribute("useCache");
+		if(useCache != null) out.print("checked"); 
+	%>
+/><br/><br/>
+<liferay-ui:message key="cache_refresh_delay" />
+<input type="text" name="cacheRefreshDelay" value="${cacheRefreshDelay}" size="50"/><br/><br/>
+
+
