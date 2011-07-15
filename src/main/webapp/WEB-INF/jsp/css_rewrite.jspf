@@ -1,0 +1,22 @@
+<fmt:message key="enable-css-rewrite"/> 
+<input type="checkbox" name="enableCssRwrt" value="true" 
+	<% 
+		String enableCssRwrt = (String)request.getAttribute("enableCssRwrt");
+		if(enableCssRwrt != null && Boolean.parseBoolean(enableCssRwrt)) out.print("checked"); 
+	%>
+
+/><br/><br/>
+
+<fmt:message key="css-prefix"/> 
+<input type="checkbox" name="prefixCss" value="true" 
+	<% 
+		String isPrefixCss = (String)request.getAttribute("prefixCss");
+		if(isPrefixCss != null && Boolean.parseBoolean(isPrefixCss)) out.print("checked"); 
+	%>
+	/><br/><br/>
+<fmt:message key="css-prefix-value"/> 
+<input type="text" name="cssClassAttr" value="${cssClassAttr}" size="50"/><br/><br/>
+
+<fmt:message key="css-regexp"/> 
+<input type="text" name="customRegexp" value="${customRegexp}" size="50"/><br/><br/>
+

@@ -1,0 +1,23 @@
+<fmt:message key="clipping_type" /><br/>
+<input type="radio" name="clipping" value="clippingNone" 
+	<% 
+		String clipping = (String)request.getAttribute("clipping");
+		if (clipping==null || clipping.equals("clippingNone")) out.print("checked"); 
+	%>
+/><fmt:message key="none_clipping" /><br/><br/>
+
+<input type="radio" name="clipping" value="clippingXpath" 
+	<% 
+		if(clipping!=null && clipping.equals("clippingXpath")) out.print("checked"); 
+	%>
+/><fmt:message key="xpath_clipping" /><br>
+<input type="text" name="xpath" value="${xpath}" size="50"/><br/><br/>
+
+<input type="radio" name="clipping" value="clippingXslt" 
+	<% 
+		if(clipping != null && clipping.equals("clippingXslt")) out.print("checked"); 
+	%>
+/><fmt:message key="xslt_clipping" /><br/>
+<textarea name="xsltTemplate" cols="50" rows="15"> ${xsltTemplate} </textarea><br/><br/>
+
+

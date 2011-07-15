@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>ESIgate portlet</display-name>
+  <jsp-config>
+	<taglib>
+		<taglib-uri>http://www.sourceforge.net/webassembletool</taglib-uri>
+		<taglib-location>/WEB-INF/tld/webassembletool.tld</taglib-location>
+	</taglib>
+	<taglib>
+		<taglib-uri>http://java.sun.com/jsp/jstl/core</taglib-uri>
+		<taglib-location>/WEB-INF/tld/c.tld</taglib-location>
+	</taglib> 
+    	<taglib>
+		<taglib-uri>http://java.sun.com/jstl/fmt_rt</taglib-uri>
+		<taglib-location>/WEB-INF/tld/fmt.tld</taglib-location>
+	</taglib>
+
+  </jsp-config>
+
+  	<servlet>
+		<servlet-name>Aggregator Servlet</servlet-name>
+		<servlet-class>fr.smile.servlet.AggregatorServlet</servlet-class>
+		<init-param>
+			<param-name>provider</param-name>
+			<param-value>default</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Aggregator Servlet</servlet-name>
+		<url-pattern>/aggregator/*</url-pattern>
+	</servlet-mapping>
+</web-app>
